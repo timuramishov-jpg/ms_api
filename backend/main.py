@@ -33,6 +33,9 @@ app = FastAPI(
 
 # Подключаем все роутеры
 app.include_router(router, prefix="/api/v1", tags=["api"])
+from backend.routers.pr2_amishov import router as pr2_router
+app.include_router(pr2_router)
+
 
 @app.get("/", tags=["🏠 Главная"])
 def read_root():
